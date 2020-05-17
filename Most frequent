@@ -1,0 +1,30 @@
+def get_key(val,my_dict): 
+    for key, value in my_dict.items(): 
+         if val == value: 
+             return key
+             
+    return "key doesn't exist"
+  
+
+def most_frequent(value):
+              ls = []
+              values = []
+              for i in value:
+                            if i not in ls: 
+                                          count = value.count(i)
+                                          ls.append(i)
+                                          values.append(count)
+              sorted_value = sorted(values)
+              new_lst = sorted_value[::-1]
+              #print(new_lst)
+              
+              
+              element = dict(zip(ls,values))
+              
+              for val in new_lst:
+                            key_value = get_key(val,element)
+                            print(key_value,' = ',val)
+                            element.pop(key_value)
+                            
+
+most_frequent('mississippi')
